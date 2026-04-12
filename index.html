@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ResQ Path AI</title>
+
+<link rel="stylesheet" href="style.css">
+<script defer src="map.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <h1>🚀 ResQ Path AI</h1>
+        <button class="primary-btn" onclick="goToResult()">🚀 Run Analysis</button>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid">
+
+        <!-- LEFT PANEL -->
+        <div class="panel glass">
+
+            <h3>📡 Upload Data</h3>
+
+            <label>Pre Image (Road)</label>
+            <input type="file" id="roadInput">
+
+            <label>Post Image (Disaster)</label>
+            <input type="file" id="disasterInput">
+
+            <hr style="margin:15px 0; opacity:0.2;">
+
+            <!-- 🌍 GEO INPUTS -->
+            <h4>🌍 Geo Coordinates (Optional)</h4>
+
+            <input type="number" step="any" id="top_lat" placeholder="Top Latitude">
+            <input type="number" step="any" id="left_lon" placeholder="Left Longitude">
+            <input type="number" step="any" id="bottom_lat" placeholder="Bottom Latitude">
+            <input type="number" step="any" id="right_lon" placeholder="Right Longitude">
+
+            <p style="font-size:11px; opacity:0.5; margin-top:8px;">
+                💡 Use Google Maps to get bounding box coordinates
+            </p>
+
+            <hr style="margin:15px 0; opacity:0.2;">
+
+            <p style="font-size:12px; opacity:0.6;">
+                These images will be used for AI-based route detection.
+            </p>
+
+        </div>
+
+        <!-- CENTER PANEL -->
+        <div class="panel canvas-panel glass">
+
+            <h3>📌 Instructions</h3>
+
+            <div style="opacity:0.8; font-size:14px; line-height:1.6;">
+                <p>1️⃣ Upload road (pre-disaster) image</p>
+                <p>2️⃣ Upload disaster (post) image</p>
+                <p>3️⃣ (Optional) Enter geo coordinates</p>
+                <p>4️⃣ Click <b>Run Analysis</b></p>
+                <p>5️⃣ Select start & goal on next screen</p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="panel glass">
+
+            <h3>⚙️ Info</h3>
+
+            <div style="font-size:13px; opacity:0.7;">
+                <p>• No point selection here</p>
+                <p>• Clean upload-only interface</p>
+                <p>• Multi-route AI enabled</p>
+                <p>• 🌍 Geo mapping supported</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

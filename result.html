@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Route Result</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- JS -->
+<script defer src="result.js"></script>
+
+<style>
+/* 🔥 FULL WIDTH MAP */
+#map {
+    height: 420px;
+    width: 100%;
+    display: none;
+    border-radius: 12px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <h1>🚀 Select Route</h1>
+        <button onclick="goBack()">⬅ Back</button>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="grid">
+
+        <!-- LEFT PANEL -->
+        <div class="panel">
+            <h3>📊 Info</h3>
+
+            <p>Distance: <span id="distance">--</span></p>
+            <p>ETA: <span id="eta">--</span></p>
+
+            <div style="margin:10px 0;">
+                <label><b>Route Mode:</b></label><br>
+                <select id="routeMode" style="margin-top:5px; width:100%; padding:6px; border-radius:6px;">
+                    <option value="road">Road 🚗</option>
+                    <option value="water">Water 🚤</option>
+                </select>
+            </div>
+
+            <button onclick="computeRoute()">🚀 Generate Route</button>
+
+            <div style="margin-top:15px;">
+                <button onclick="startNavigation()" style="width:100%; margin-bottom:8px;">
+                    🧭 Start Navigation
+                </button>
+
+                <button onclick="stopNavigation()" style="width:100%;">
+                    🛑 Stop Navigation
+                </button>
+            </div>
+
+            <button onclick="resetSelection()" style="margin-top:10px; width:100%;">
+                🔄 Reset Selection
+            </button>
+
+            <div id="routeLegend" style="margin-top:15px; font-size:13px;"></div>
+        </div>
+
+        <!-- CENTER CANVAS -->
+        <div class="panel canvas-panel">
+            <canvas id="resultCanvas"></canvas>
+        </div>
+
+    </div>
+
+    <!-- 🔥 FULL WIDTH MAP -->
+    <div class="panel" style="margin-top:15px;">
+        <h3 style="margin-bottom:10px;">🗺 Live Map Navigation</h3>
+        <div id="map"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
