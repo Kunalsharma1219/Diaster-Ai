@@ -130,7 +130,7 @@ Installation
 
 
 Clone the Repository
-git clone https://github.com/<username>/disaster-ai.git
+https://github.com/Kunalsharma1219/Diaster-Ai
 cd disaster-ai
 Create a Virtual Environment
 python3 -m venv venv
